@@ -11,7 +11,13 @@ export default function Navbar() {
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex h-[3.5rem] items-center justify-between 
           dark:text-white text-black">
             <Link className="text-lg flex gap-2 items-center font-bold" href="/">
-                  <Image src='/wplogo-white.png' alt="wp" width={32} height={32} className="rounded-xl"/>
+            
+                  <Image src='/wplogo-white.png' alt="wp" width={32} height={32} 
+                  className="rounded-xl dark:block hidden"/>
+
+                  <Image src='/wplogo.png' alt="wp" width={32} height={32} 
+                  className="rounded-xl dark:hidden block"/>
+
                   <p>wallp</p>
             </Link>
          
