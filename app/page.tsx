@@ -6,9 +6,9 @@ import  Hero  from "@/components/hero";
 export default function Home() {
   return (
     <div className="font-sans grid grid-rows items-center 
-        justify-items-center min-h-screen ">
+        justify-items-center min-h-screen dark:bg-black bg-white">
       <Navbar />
-      {/* <Hero /> */}
+      <Hero />
     </div>
   );
 }
