@@ -15,7 +15,7 @@ export default function Home() {
 
   return (
     <div className="font-sans grid grid-rows items-center justify-items-center min-h-screen dark:bg-black bg-white overflow-y-scroll no-scrollbar">
-      <Navbar />
+
       <Hero />
       <HeroParallax wallpapers={wallpapers} />
       <OrbitingCirclesDemo />

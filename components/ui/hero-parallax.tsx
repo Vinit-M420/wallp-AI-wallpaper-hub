@@ -58,7 +58,7 @@ export const HeroParallax = ({ wallpapers }: {
   return (
     <div
       ref={ref}
-      className="w-screen animate-fade-in opacity-0 [--animation-delay:400ms] px-8 pt-20 h-[250vh] z-20 antialiased relative self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="w-screen mt-10 animate-fade-in opacity-0 [--animation-delay:400ms] px-8 pt-20 h-[250vh] z-20 antialiased relative self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <motion.div
         style={{

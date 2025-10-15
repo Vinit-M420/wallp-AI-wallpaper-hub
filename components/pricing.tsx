@@ -86,10 +86,11 @@ export function PricingSection() {
 
         <div className="max-w-[60rem] mx-auto flex w-full items-center justify-center space-x-2">
             <Switch.Root
-                id="interval"
-                checked={interval === "year"}
-                onCheckedChange={(checked) => setInterval(checked ? "year" : "month")}
-                className="w-12 h-6 bg-gray-300 rounded-full relative data-[state=checked]:bg-blue-500 transition-colors" >
+            id="interval"
+            checked={interval === "year"}
+            onCheckedChange={(checked) => setInterval(checked ? "year" : "month")}
+            className="w-12 h-6 bg-gray-300 rounded-full relative data-[state=checked]:bg-blue-500 transition-colors"
+          >
             <Switch.Thumb className="block w-5 h-5 bg-white rounded-full absolute top-0.5 left-0.5 data-[state=checked]:left-6 transition-transform" />
           </Switch.Root>
           <span className="text-gray-500 dark:text-gray-400">Monthly</span>

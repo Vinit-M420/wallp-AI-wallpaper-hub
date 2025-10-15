@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <div className="relative mx-auto mt-32 flex flex-col items-center justify-center w-screen">
+    <div className="relative mx-auto mt-32 flex flex-col items-center justify-center w-screen z-100">
       <div className="group text-xs inline-flex items-center justify-center flex-nowrap rounded-full 
       border border-gray-200 bg-gray-950/10 px-3 py-1 transition-all hover:bg-gray-950/20 
       dark:border-gray-800 dark:bg-gray-50/10 dark:hover:bg-gray-50/20">
@@ -22,8 +22,8 @@ export default function Hero() {
         Utilize your AI subscriptions to create wallpapers<br /> and share with others. Or don't your wish.
       </p>
       <Link
-        href='/'
-        className="flex gap-1 items-center translate-y-[-1rem] animate-fade-in text-base md:text-xl text-white dark:text-black bg-black dark:bg-white opacity-0 ease-in-out [--animation-delay:600ms] px-4 py-2 rounded-2xl dark:hover:bg-white/80 hover:bg-black/80 transition-all duration-200"
+        href='/explore'
+        className="flex gap-1 items-center translate-y-[-1rem] animate-fade-in text-base md:text-xl text-white dark:text-black bg-black dark:bg-white opacity-0 ease-in-out [--animation-delay:600ms] px-4 py-2 rounded-2xl dark:hover:bg-white/80 hover:bg-black/80 transition-all duration-200 cursor-pointer"
       >
         Explore
         <ArrowRightIcon className="ml-1 size-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1" />

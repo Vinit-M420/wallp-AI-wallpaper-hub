@@ -5,15 +5,15 @@ import Image from "next/image"
 
 export function OrbitingCirclesDemo() {
   return (
-    <div className="flex flex-col gap-5 justify-center items-center"> 
+    <div className="flex flex-col justify-center items-center"> 
         <h2 className="inline-block bg-gradient-to-br dark:from-white text-center 
         from-black from-30% dark:to-white/40 to-black/40 bg-clip-text pt-12 pb-8 
         text-2xl font-medium tracking-tighter text-transparent md:text-balance 
           md:text-4xl lg:text-6xl translate-y-[-1rem] animate-fade-in opacity-0 
         [--animation-delay:200ms]">
-        Image Generation is on <br/> Whole Another Level now.
+        AI Image Generation is on <br/> Whole Another Level now.
         </h2>
-    <div className="relative flex h-[500px] w-xl flex-col items-center justify-center overflow-hidden">
+    <div className="relative flex h-[400px] w-xl flex-col items-center justify-center overflow-hidden animate-fade-in">
 
       <OrbitingCircles iconSize={40}>
         <Icons.grok />

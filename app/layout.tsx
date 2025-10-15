@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Inter as FontSans } from "next/font/google";
+import Navbar from "@/components/navbar";
 
 
 const fontSans = FontSans({
@@ -10,14 +11,16 @@ const fontSans = FontSans({
   variable: "--font-sans",
 });
 
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
 
 export const metadata: Metadata = {
   title: "wallp",
-  description: "",
+  description: "Your friendly AI Wallpaper Destination",
+  icons: [
+  { rel: "icon", url: "/wplogo.png", type: "image/png", sizes: "32x32" },
+],
+  // icons: {
+  //   icon: "/wplogo-white.png", // Simple string for favicon
+  // },
 };
 
 export default function RootLayout({
@@ -28,6 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={cn("min-h-screen bg-background font-sans antialiased", fontSans.variable)}>
+        <Navbar />
         {children}
       </body>
     </html>
