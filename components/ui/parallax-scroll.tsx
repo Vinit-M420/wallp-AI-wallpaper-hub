@@ -5,10 +5,7 @@ import { motion } from "motion/react";
 
 import { cn } from "@/lib/utils";
 
-export const ParallaxScroll = ({
-  images,
-  className,
-}: {
+export const ParallaxScroll = ({ images, className }: {
   images: string[];
   className?: string;
 }) => {
@@ -30,7 +27,7 @@ export const ParallaxScroll = ({
 
   return (
     <div
-      className={cn("h-fit items-start overflow-y-auto w-full", className)}
+      className={cn("h-fit items-start overflow-y-auto w-full animate-fade-in", className)}
       ref={gridRef}
     >
       <div
@@ -45,10 +42,11 @@ export const ParallaxScroll = ({
             >
               <img
                 src={el}
-                className="h-fit w-full object-cover object-left-top rounded-lg gap-10 !m-0 !p-0"
+                className="h-fit w-full object-cover object-left-top rounded-lg gap-10 !m-0 !p-0
+                  "
                 height="400"
                 width="400"
-                alt="thumbnail"
+                alt="wallpaper"
               />
             </motion.div>
           ))}
@@ -58,10 +56,11 @@ export const ParallaxScroll = ({
             <motion.div style={{ y: translateSecond }} key={"grid-2" + idx}>
               <img
                 src={el}
-                className="h-fit w-full object-cover object-left-top rounded-lg gap-10 !m-0 !p-0"
+                className="h-fit w-full object-cover object-left-top rounded-lg gap-10 !m-0 !p-0
+                  "
                 height="400"
                 width="400"
-                alt="thumbnail"
+                alt="wallpaper"
               />
             </motion.div>
           ))}
@@ -71,10 +70,11 @@ export const ParallaxScroll = ({
             <motion.div style={{ y: translateThird }} key={"grid-3" + idx}>
               <img
                 src={el}
-                className="h-fit w-full object-cover object-left-top rounded-lg gap-10 !m-0 !p-0"
+                className="h-fit w-full object-cover object-left-top rounded-lg gap-10 !m-0 !p-0
+                  "
                 height="400"
                 width="400"
-                alt="thumbnail"
+                alt="wallpaper"
               />
             </motion.div>
           ))}

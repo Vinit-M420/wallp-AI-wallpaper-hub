@@ -1,9 +1,11 @@
 "use client";
 import { ParallaxScroll } from "@/components/ui/parallax-scroll";
+import { TypingAnimation } from "@/components/ui/typing-animation"
 
 export default function Explore() {
   return (
-  <div className="font-sans grid grid-rows items-center justify-items-center min-h-screen dark:bg-black bg-white overflow-y-scroll no-scrollbar mt-20">
+  <div className="font-sans grid grid-rows items-center justify-items-center min-h-screen 
+  dark:bg-black bg-white overflow-y-scroll no-scrollbar pt-20">
     <h2 className="inline-block bg-gradient-to-br dark:from-white text-center 
         from-black from-30% dark:to-white/40 to-black/40 bg-clip-text pt-12 
         text-2xl font-medium tracking-tighter text-transparent md:text-balance 
@@ -12,12 +14,13 @@ export default function Explore() {
         Explore Collection
     </h2>
     <ParallaxScroll images={images} />
-
-     <h2 className="inline-block bg-gradient-to-br dark:from-white text-center 
-        from-black from-30% dark:to-white/40 to-black/40 bg-clip-text pt-12 
+      <TypingAnimation 
+      className="inline-block bg-gradient-to-br dark:from-white text-center 
+        from-black from-30% dark:to-white/40 to-black/40 bg-clip-text 
         text-md font-medium tracking-tighter text-transparent md:text-balance 
-        md:text-xl lg:text-3xl translate-y-[-1rem] animate-fade-in opacity-0 
-        [--animation-delay:200ms] mb-10">More Soon to Come</h2>
+        md:text-xl lg:text-3xl my-10" startOnView>
+          More Soon to Come
+      </TypingAnimation>
   </div>
 )}
 
