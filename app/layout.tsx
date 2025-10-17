@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-// import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Inter as FontSans } from "next/font/google";
@@ -18,17 +17,24 @@ export const metadata: Metadata = {
   icons: [
     {
       rel: "icon",
-      url: "/wplogo.png",
+      url: "/wplogo.ico",
+      type: "image/x-icon",
+      sizes: "32x32",
+    },
+    {
+      rel: "icon",
+      url: "/wplogo.ico",
       type: "image/png",
       sizes: "32x32",
     },
     {
       rel: "apple-touch-icon",
-      url: "/wplogo.png", 
+      url: "/wplogo.ico",
       sizes: "180x180",
     },
   ],
 };
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -36,6 +42,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      {/* <link rel="icon" href="/wplogo.png" type="image/png" sizes="32x32" />
+      <link rel="apple-touch-icon" href="/wplogo.png" sizes="180x180" /> */}
       <body className={cn("min-h-screen bg-background font-sans antialiased", fontSans.variable)}>
         <Navbar />
         {children}

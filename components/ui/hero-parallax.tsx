@@ -156,7 +156,7 @@ export const ProductCard = ({
         width={isMobile ? 180 : 260}
         className="object-cover object-center absolute h-full w-full inset-0 group-hover/product:shadow-2xl"
         alt={product.title}
-        fill
+        // fill
         style={{ objectFit: "cover" }}
         priority={isMobile ? false : true}
       />
