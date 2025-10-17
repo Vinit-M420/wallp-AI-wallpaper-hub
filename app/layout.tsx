@@ -16,13 +16,19 @@ export const metadata: Metadata = {
   title: "wallp",
   description: "Your friendly AI Wallpaper Destination",
   icons: [
-  { rel: "icon", url: "/wplogo.png", type: "image/png", sizes: "32x32" },
-],
-  // icons: {
-  //   icon: "/wplogo-white.png", // Simple string for favicon
-  // },
+    {
+      rel: "icon",
+      url: "/wplogo.png",
+      type: "image/png",
+      sizes: "32x32",
+    },
+    {
+      rel: "apple-touch-icon",
+      url: "/wplogo.png", 
+      sizes: "180x180",
+    },
+  ],
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
