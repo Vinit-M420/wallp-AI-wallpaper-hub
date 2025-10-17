@@ -7,6 +7,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useLenis } from "lenis/react";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 import { useState } from "react";
+import { usePathname } from "next/navigation"; 
 
 interface MenuItem {
   id: number;
@@ -22,6 +23,9 @@ const menuItem: MenuItem[] = [
 
 export default function Navbar() {
   const lenis = useLenis();
+  const pathname = usePathname(); 
+  const hideHamburgerPaths = ["/explore", "/login"]; 
+  const showHamburger = !hideHamburgerPaths.includes(pathname); // Determine if hamburger should be shown
 
   const mobilenavbarVariant = {
     initial: { opacity: 0, scale: 1 },
@@ -54,12 +58,11 @@ export default function Navbar() {
   const handleScroll = (href: string) => {
     if (lenis) {
       if (href === "#home") {
-        lenis.scrollTo(0, { duration: 1.5 }); // Scroll to top for #home
+        lenis.scrollTo(0, { duration: 1.5 });
       } else {
-        lenis.scrollTo(href, { duration: 1.5 }); // Scroll to section
+        lenis.scrollTo(href, { duration: 1.5 });
       }
     } else {
-      // Fallback if lenis is not initialized
       if (href === "#home") {
         window.scrollTo({ top: 0, behavior: "smooth" });
       } else {
@@ -104,17 +107,19 @@ export default function Navbar() {
             </Link>
             <AnimatedThemeToggler className="size-6" />
           </div>
-          <button
-            className="ml-6 md:hidden flex"
-            onClick={() => setHamburgerMenuIsOpen((open) => !open)}
-            aria-label={hamburgerMenuIsOpen ? "Close menu" : "Open menu"}
-          >
-            {hamburgerMenuIsOpen ? <XIcon /> : <AlignJustify />}
-          </button>
+          {showHamburger && (
+            <button
+              className="ml-6 md:hidden flex"
+              onClick={() => setHamburgerMenuIsOpen((open) => !open)}
+              aria-label={hamburgerMenuIsOpen ? "Close menu" : "Open menu"}
+            >
+              {hamburgerMenuIsOpen ? <XIcon /> : <AlignJustify />}
+            </button>
+          )}
         </div>
       </header>
       <AnimatePresence>
-        {hamburgerMenuIsOpen && (
+        {hamburgerMenuIsOpen && showHamburger && (
           <motion.nav
             key="mobile-nav"
             initial="initial"
