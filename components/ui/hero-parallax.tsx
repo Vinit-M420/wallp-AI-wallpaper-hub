@@ -16,13 +16,8 @@ export const HeroParallax = ({ wallpapers }: {
     wallp: string;
   }[];
 }) => {
-  // Add safety check
-  if (!wallpapers || wallpapers.length === 0) {
-    return null;
-  }
-
-  const firstRow = wallpapers.slice(0, 6);
-  const secondRow = wallpapers.slice(4, 10);
+  const firstRow = wallpapers?.slice(0, 6) || [];
+  const secondRow = wallpapers?.slice(4, 10) || [];
   const ref = React.useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -65,18 +60,23 @@ export const HeroParallax = ({ wallpapers }: {
     springConfig
   );
   const translateY = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], isMobile ? [-500, 300] : [-700, 500]), // Adjusted for mobile
+    useTransform(scrollYProgress, [0, 0.2], isMobile ? [-500, 300] : [-700, 500]),
     springConfig
   );
+
+  // Early return after all hooks
+  if (!wallpapers || wallpapers.length === 0) {
+    return null;
+  }
 
   return (
     <div
       ref={ref}
       className={cn(
         "w-screen md:mt-10 mt-30 animate-fade-in opacity-0 [--animation-delay:400ms] px-8 pt-20",
-        isMobile ? "h-[150vh]" : "h-[250vh]", // Reduced height for mobile to ensure scrolling
+        isMobile ? "h-[150vh]" : "h-[250vh]",
         "z-20 antialiased relative self-auto [perspective:1000px] [transform-style:preserve-3d]",
-        isMobile && "overflow-x-clip" // Prevent horizontal scrolling on mobile
+        isMobile && "overflow-x-clip"
       )}
     >
       <motion.div
@@ -88,10 +88,12 @@ export const HeroParallax = ({ wallpapers }: {
         }}
         className=""
       >
-        <motion.div className={cn(
-          "flex flex-row-reverse space-x-reverse mb-20",
-          isMobile ? "space-x-10" : "space-x-20"
-        )}>
+        <motion.div
+          className={cn(
+            "flex flex-row-reverse space-x-reverse mb-20",
+            isMobile ? "space-x-10" : "space-x-20"
+          )}
+        >
           {firstRow.map((wallp) => (
             <ProductCard
               product={wallp}
@@ -101,10 +103,12 @@ export const HeroParallax = ({ wallpapers }: {
             />
           ))}
         </motion.div>
-        <motion.div className={cn(
-          "flex flex-row",
-          isMobile ? "space-x-10" : "space-x-20"
-        )}>
+        <motion.div
+          className={cn(
+            "flex flex-row",
+            isMobile ? "space-x-10" : "space-x-20"
+          )}
+        >
           {secondRow.map((wallp) => (
             <ProductCard
               product={wallp}
@@ -143,7 +147,7 @@ export const ProductCard = ({
       className={cn(
         "group/product relative shrink-0",
         "group relative col-span-3 flex flex-col justify-between overflow-hidden rounded-3xl",
-        isMobile ? "w-[180px] h-[270px]" : "w-[260px] h-[390px]" // Smaller size on mobile
+        isMobile ? "w-[180px] h-[270px]" : "w-[260px] h-[390px]"
       )}
     >
       <Image
@@ -152,12 +156,17 @@ export const ProductCard = ({
         width={isMobile ? 180 : 260}
         className="object-cover object-center absolute h-full w-full inset-0 group-hover/product:shadow-2xl"
         alt={product.title}
+        fill
+        style={{ objectFit: "cover" }}
+        priority={isMobile ? false : true}
       />
       <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div>
-      <h2 className={cn(
-        "absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white",
-        isMobile ? "text-sm" : "text-base" // Smaller text on mobile
-      )}>
+      <h2
+        className={cn(
+          "absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white",
+          isMobile ? "text-sm" : "text-base"
+        )}
+      >
         {product.title}
       </h2>
     </motion.div>

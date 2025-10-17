@@ -19,8 +19,8 @@ export default function Hero() {
         Your friendly<br /> AI Wallpaper Destination
       </h1>
       <p className="mb-10 lg:mb-14 text-base text-center text-gray-600 dark:text-gray-400 md:text-2xl md:text-balance translate-y-[-1rem] leading-[32px] lg:leading-[40px] animate-fade-in opacity-0 [--animation-delay:400ms]">
-        Utilize your AI subscriptions to create wallpapers <br className="sm:block hidden" /> 
-        and share with others. <br className="block sm:hidden" /> Or don't your wish.
+        {`Utilize your AI subscriptions to create wallpapers `}<br className="sm:block hidden" /> 
+        {`and share with others. `}<br className="block sm:hidden" />{` Or don't your wish.`}
       </p>
       <Link
         href='/explore'

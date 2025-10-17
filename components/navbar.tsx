@@ -3,11 +3,11 @@ import { cn } from "@/lib/utils";
 import { AlignJustify, XIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, Variants } from "framer-motion";
 import { useLenis } from "lenis/react";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 import { useState } from "react";
-import { usePathname } from "next/navigation"; 
+import { usePathname } from "next/navigation";
 
 interface MenuItem {
   id: number;
@@ -23,33 +23,33 @@ const menuItem: MenuItem[] = [
 
 export default function Navbar() {
   const lenis = useLenis();
-  const pathname = usePathname(); 
-  const hideHamburgerPaths = ["/explore", "/login"]; 
-  const showHamburger = !hideHamburgerPaths.includes(pathname); // Determine if hamburger should be shown
+  const pathname = usePathname();
+  const hideHamburgerPaths = ["/explore", "/login"];
+  const showHamburger = !hideHamburgerPaths.includes(pathname);
 
-  const mobilenavbarVariant = {
+  const mobilenavbarVariant: Variants = {
     initial: { opacity: 0, scale: 1 },
     animate: {
       scale: 1,
       opacity: 1,
-      transition: { duration: 0.2, ease: "easeOut" },
+      transition: { duration: 0.2, ease: "easeOut" as const },
     },
     exit: {
       opacity: 0,
-      transition: { duration: 0.2, delay: 0.2, ease: "easeOut" },
+      transition: { duration: 0.2, delay: 0.2, ease: "easeOut" as const },
     },
   };
 
-  const mobileLinkVar = {
+  const mobileLinkVar: Variants = {
     initial: { y: "-20px", opacity: 0 },
     open: {
       y: 0,
       opacity: 1,
-      transition: { duration: 0.3, ease: "easeOut" },
+      transition: { duration: 0.3, ease: "easeOut" as const },
     },
   };
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     open: { transition: { staggerChildren: 0.06 } },
   };
 
@@ -166,6 +166,7 @@ export default function Navbar() {
             >
               {menuItem.map((item) => (
                 <motion.li
+                  variants={mobileLinkVar} // Apply mobileLinkVar
                   key={item.id}
                   className="border-grey-dark pl-6 py-1 border-b"
                 >
@@ -178,7 +179,10 @@ export default function Navbar() {
                   </Link>
                 </motion.li>
               ))}
-              <motion.li className="border-grey-dark pl-6 py-0.5 border-b">
+              <motion.li
+                variants={mobileLinkVar} // Apply mobileLinkVar to theme toggler
+                className="border-grey-dark pl-6 py-0.5 border-b"
+              >
                 <AnimatedThemeToggler className="size-6" />
               </motion.li>
             </motion.ul>
