@@ -13,7 +13,23 @@ export function OrbitingCirclesDemo() {
         [--animation-delay:200ms]">
         AI Image Generation is on <br/> Whole Another Level now.
         </h2>
-    <div className="relative flex h-[400px] w-xl flex-col items-center justify-center overflow-hidden animate-fade-in">
+    <div className="relative md:hidden flex h-[400px] sm:w-xl w-xs flex-col items-center justify-center overflow-hidden animate-fade-in">
+
+      <OrbitingCircles iconSize={30} radius={140}>
+        <Icons.grok />
+        <Icons.perplexity />
+        <Icons.openai />
+        <Icons.gemini />
+      </OrbitingCircles>
+      <OrbitingCircles iconSize={25} radius={90} reverse speed={2}>
+        <Icons.grok />
+        <Icons.perplexity />
+        <Icons.openai />
+        <Icons.gemini />
+      </OrbitingCircles>
+    </div>
+
+     <div className="relative md:flex hidden h-[400px] sm:w-xl w-xs flex-col items-center justify-center overflow-hidden animate-fade-in">
 
       <OrbitingCircles iconSize={40}>
         <Icons.grok />
