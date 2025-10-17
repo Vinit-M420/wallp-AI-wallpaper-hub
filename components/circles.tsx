@@ -58,7 +58,7 @@ const Icons = {
     </>
   ),
   perplexity: () => (
-  <img
+  <Image
     width="100"
     height="100"
     alt="perplexity"
@@ -66,7 +66,7 @@ const Icons = {
   />
 ),
 gemini: () => (
-  <img
+  <Image
     width="100"
     height="100"
     alt="Gemini"
