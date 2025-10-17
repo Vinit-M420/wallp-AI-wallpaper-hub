@@ -8,6 +8,7 @@ import {
   MotionValue,
 } from "motion/react";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 export const HeroParallax = ({ wallpapers }: {
   wallpapers: {
@@ -145,7 +146,7 @@ export const ProductCard = ({
         isMobile ? "w-[180px] h-[270px]" : "w-[260px] h-[390px]" // Smaller size on mobile
       )}
     >
-      <img
+      <Image
         src={product.wallp}
         height={isMobile ? 270 : 390}
         width={isMobile ? 180 : 260}
