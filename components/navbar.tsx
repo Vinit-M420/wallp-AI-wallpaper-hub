@@ -130,7 +130,7 @@ export default function Navbar() {
               "fixed left-0 top-0 z-[150] h-screen w-screen overflow-auto bg-background/70 backdrop-blur-[12px]"
             )}
           >
-            <div className="container flex h-[3.5rem] items-center justify-between px-4 sm:px-6 lg:px-8">
+            <div className="container flex h-[3.5rem] items-center justify-between px-4 sm:px-6 lg:px-8 border-b dark:border-gray-800 border-gray-200">
               <Link className="text-lg flex gap-2 items-center font-bold" href="/">
                 <Image
                   src="/wplogo-white.png"
@@ -150,8 +150,7 @@ export default function Navbar() {
                 />
                 <p>wallp</p>
               </Link>
-              <button
-                className="ml-6 md:hidden"
+              <button className="mr-4 md:hidden"
                 onClick={() => setHamburgerMenuIsOpen((open) => !open)}
                 aria-label={hamburgerMenuIsOpen ? "Close menu" : "Open menu"}
               >
@@ -168,10 +167,10 @@ export default function Navbar() {
                 <motion.li
                   variants={mobileLinkVar} // Apply mobileLinkVar
                   key={item.id}
-                  className="border-grey-dark pl-6 py-1 border-b"
+                  className="border-b dark:border-gray-800 border-gray-200 pl-6 py-2 flex items-center h-[3.5rem]"
                 >
                   <Link
-                    className="hover:text-grey flex h-[var(--navigation-height)] w-full items-center text-xl transition-[color,transform] duration-300 md:text-sm md:transition-colors"
+                    className="hover:text-gray-400 flex h-[var(--navigation-height)] w-full items-center text-xl transition-[color,transform] duration-300 md:text-sm md:transition-colors text-white"
                     href={item.href}
                     onClick={() => handleScroll(item.href)}
                   >
@@ -179,11 +178,10 @@ export default function Navbar() {
                   </Link>
                 </motion.li>
               ))}
-              <motion.li
-                variants={mobileLinkVar} // Apply mobileLinkVar to theme toggler
-                className="border-grey-dark pl-6 py-0.5 border-b"
+              <motion.li variants={mobileLinkVar} 
+                className="border-b dark:border-gray-800 border-gray-200 pl-6 py-2 flex items-center h-[3.5rem]"
               >
-                <AnimatedThemeToggler className="size-6" />
+                <AnimatedThemeToggler className="size-6 cursor-pointer hover:text-gray-400 transition-[color,transform] duration-300" />
               </motion.li>
             </motion.ul>
           </motion.nav>
