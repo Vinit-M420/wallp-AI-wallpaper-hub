@@ -43,8 +43,7 @@ export const ParallaxScroll = ({ images, className }: {
             >
               <Image
                 src={el}
-                className="h-fit w-full object-cover object-left-top rounded-lg gap-10 !m-0 !p-0
-                  "
+                className="h-fit w-full object-cover object-left-top rounded-lg gap-10 !m-0 !p-0"
                 height="400"
                 width="400"
                 alt="wallpaper"
@@ -57,8 +56,7 @@ export const ParallaxScroll = ({ images, className }: {
             <motion.div style={{ y: translateSecond }} key={"grid-2" + idx}>
               <Image
                 src={el}
-                className="h-fit w-full object-cover object-left-top rounded-lg gap-10 !m-0 !p-0
-                  "
+                className="h-fit w-full object-cover object-left-top rounded-lg gap-10 !m-0 !p-0"
                 height="400"
                 width="400"
                 alt="wallpaper"
@@ -69,10 +67,9 @@ export const ParallaxScroll = ({ images, className }: {
         <div className="grid gap-10">
           {thirdPart.map((el, idx) => (
             <motion.div style={{ y: translateThird }} key={"grid-3" + idx}>
-              <Image
+              <Image 
                 src={el}
-                className="h-fit w-full object-cover object-left-top rounded-lg gap-10 !m-0 !p-0
-                  "
+                className="h-fit w-full object-cover object-left-top rounded-lg gap-10 !m-0 !p-0"
                 height="400"
                 width="400"
                 alt="wallpaper"

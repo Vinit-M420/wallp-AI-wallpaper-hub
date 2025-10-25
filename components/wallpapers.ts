@@ -11,7 +11,6 @@ export const wallpapers = [
     title: "Breath of the Wild",
     wallp: "/botw.png",
   },
-
   {
     title: "Iceland",
     wallp: "/iceland-black-beach.png",

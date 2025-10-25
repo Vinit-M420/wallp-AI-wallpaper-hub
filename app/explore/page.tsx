@@ -34,7 +34,7 @@ const images = [
   "/porsche.png",
   "/snow.png",
   "/teaplantation.png",
-   "mustang.png",
-   "/nyclit.png",
-   "/hongkong.png"
+  "/mustang.png",
+  "/nyclit.png",
+  "/hongkong.png"
   ];

@@ -105,11 +105,11 @@ export default function Navbar() {
             >
               Log in
             </Link>
-            <AnimatedThemeToggler className="size-6" />
+            <AnimatedThemeToggler className="size-6 cursor-pointer" />
           </div>
           {showHamburger && (
             <button
-              className="ml-6 md:hidden flex"
+              className="ml-6 md:hidden flex cursor-pointer hover:text-gray-400 transition-color duration-300"
               onClick={() => setHamburgerMenuIsOpen((open) => !open)}
               aria-label={hamburgerMenuIsOpen ? "Close menu" : "Open menu"}
             >
@@ -150,7 +150,7 @@ export default function Navbar() {
                 />
                 <p>wallp</p>
               </Link>
-              <button className="mr-4 md:hidden"
+              <button className="mr-4 md:hidden cursor-pointer hover:text-gray-400 transition-color duration-300"
                 onClick={() => setHamburgerMenuIsOpen((open) => !open)}
                 aria-label={hamburgerMenuIsOpen ? "Close menu" : "Open menu"}
               >
