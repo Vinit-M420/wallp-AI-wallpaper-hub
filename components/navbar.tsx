@@ -77,7 +77,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-[99] border-b dark:border-gray-800 border-gray-200 opacity-0 backdrop-blur-[12px] animate-fade-in">
+      <header className="fixed top-0 left-0 right-0 z-[99] border-b dark:border-gray-800 border-gray-200 opacity-0 backdrop-blur-[12px] animate-fade-in bg-background/10">
         <div className="max-w-screen mx-auto px-4 sm:px-6 lg:px-8 flex h-[3.5rem] items-center justify-between dark:text-white text-black">
           <Link className="text-lg flex gap-2 items-center font-bold" href="/">
             <Image
