@@ -25,12 +25,14 @@ export default function Hero() {
           <br className="lg:hidden md:block sm:hidden"/>
           {`and share with others. `}<br className="lg:block md:hidden sm:block" />{` Or don't your wish.`}
         </p>
+         
         <Link href='/explore'
-          className="flex gap-1 w-fit items-center translate-y-[-1rem] animate-fade-in text-base md:text-xl text-white dark:text-black bg-black dark:bg-white opacity-0 ease-in-out [--animation-delay:600ms] px-4 py-2 rounded-2xl dark:hover:bg-white/80 hover:bg-black/80 transition-all duration-200 cursor-pointer"
-        >
-          Explore
-          <ArrowRightIcon className="ml-1 size-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1" />
+          className="flex gap-1 w-fit items-center translate-y-[-1rem] animate-fade-in text-base md:text-xl text-white dark:text-black bg-black dark:bg-white opacity-0 ease-in-out [--animation-delay:600ms] px-4 py-2 rounded-2xl dark:hover:bg-white/80 hover:bg-black/80 hover:gap-5 transition-all duration-200 cursor-pointer"> 
+            Explore
+            <ArrowRightIcon className="ml-1 size-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1" /> 
         </Link>
+
+
       </div> 
       </div>
     </div>

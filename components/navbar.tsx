@@ -150,7 +150,7 @@ export default function Navbar() {
                 />
                 <p>wallp</p>
               </Link>
-              <button className="mr-4 md:hidden cursor-pointer hover:text-gray-400 transition-color duration-300"
+              <button className="md:hidden cursor-pointer hover:text-gray-400 transition-color duration-300"
                 onClick={() => setHamburgerMenuIsOpen((open) => !open)}
                 aria-label={hamburgerMenuIsOpen ? "Close menu" : "Open menu"}
               >

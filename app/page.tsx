@@ -16,8 +16,8 @@ export default function Home() {
       <div id="home">
         <Hero />
       </div>
-      <HeroParallax wallpapers={wallpapers}  /> 
-      <OrbitingCirclesDemo />
+        <HeroParallax wallpapers={wallpapers}  /> 
+        <OrbitingCirclesDemo />
       <div id="pricing">
         <PricingSection />
       </div>
@@ -27,3 +27,5 @@ export default function Home() {
     </div>
   );
 }
+
+
