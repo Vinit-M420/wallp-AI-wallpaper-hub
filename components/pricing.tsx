@@ -99,7 +99,7 @@ export function PricingSection() {
           </span>
         </div>
 
-        <div className="mt-3 mx-auto grid w-full justify-center gap-8 md:grid-cols-3">
+        <div className="mt-3 mx-auto grid w-full justify-center gap-8 lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
           {demoPrices.map((price, idx) => (
             <div
               key={price.id}
@@ -112,7 +112,7 @@ export function PricingSection() {
                 }
               )}
             >
-              <div className="flex items-center justify-start text-left">
+              <div className="flex items-center justify-start text-left gap-5">
                 <div className="ml-4">
                   <h2 className="bg-gradient-to-br dark:from-white from-black from-30% dark:to-white/40 to-black/40 bg-clip-text font-medium tracking-tighter text-transparent text-3xl leading-7">
                     {price.name}

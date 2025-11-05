@@ -10,41 +10,42 @@ import {
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
-export const HeroParallax = ({ wallpapers }: {
+
+export const HeroParallax = ({
+  wallpapers,
+}: {
   wallpapers: {
     title: string;
     wallp: string;
   }[];
 }) => {
-  const firstRow = wallpapers?.slice(0, 6) || [];
-  const secondRow = wallpapers?.slice(4, 10) || [];
+  const firstRow = wallpapers.slice(0, 6);
+  const secondRow = wallpapers.slice(4, 10);
   const ref = React.useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
   });
 
-  // Detect if the device is mobile based on window width
   const [isMobile, setIsMobile] = React.useState(false);
-
+  
   React.useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768); // Mobile breakpoint at 768px
-    };
-    handleResize(); // Check on mount
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+      const handleResize = () => {
+        setIsMobile(window.innerWidth < 768); // Mobile breakpoint at 768px
+      };
+      handleResize(); // Check on mount
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const springConfig = { stiffness: 300, damping: 30, bounce: 100 };
 
-  // Conditionally apply horizontal translation based on isMobile
   const translateX = useSpring(
-    useTransform(scrollYProgress, [0, 1], isMobile ? [0, 0] : [0, 1000]),
+    useTransform(scrollYProgress, [0, 1], [0, 1000]),
     springConfig
   );
   const translateXReverse = useSpring(
-    useTransform(scrollYProgress, [0, 1], isMobile ? [0, 0] : [0, -1000]),
+    useTransform(scrollYProgress, [0, 1], [0, -1000]),
     springConfig
   );
   const rotateX = useSpring(
@@ -60,25 +61,23 @@ export const HeroParallax = ({ wallpapers }: {
     springConfig
   );
   const translateY = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], isMobile ? [-500, 300] : [-700, 500]),
+    useTransform(scrollYProgress, [0, 0.2], [-700, 500]),
     springConfig
   );
 
-  // Early return after all hooks
-  if (!wallpapers || wallpapers.length === 0) {
-    return null;
-  }
 
   return (
     <div
       ref={ref}
+      // className="h-[300vh] py-40 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
       className={cn(
-        "w-screen md:mt-10 mt-30 animate-fade-in opacity-0 [--animation-delay:400ms] px-8 pt-20",
-        isMobile ? "h-[150vh]" : "h-[250vh]",
+        "w-screen sm:mt-10 md:mt-30 mt-30 animate-fade-in opacity-0 [--animation-delay:400ms] px-8",
+        isMobile ? "h-[200vh] pt-40 pb-0" : "lg:h-[250vh] h-[220vh] pt-40 pb-0",
         "z-20 antialiased relative self-auto [perspective:1000px] [transform-style:preserve-3d]",
-        isMobile && "overflow-x-clip"
+        "overflow-x-clip"
       )}
-    >
+
+      >
       <motion.div
         style={{
           rotateX,
@@ -88,12 +87,7 @@ export const HeroParallax = ({ wallpapers }: {
         }}
         className=""
       >
-        <motion.div
-          className={cn(
-            "flex flex-row-reverse space-x-reverse mb-20",
-            isMobile ? "space-x-10" : "space-x-20"
-          )}
-        >
+        <motion.div className="flex flex-row-reverse space-x-reverse space-x-20 mb-20">
           {firstRow.map((wallp) => (
             <ProductCard
               product={wallp}
@@ -103,12 +97,7 @@ export const HeroParallax = ({ wallpapers }: {
             />
           ))}
         </motion.div>
-        <motion.div
-          className={cn(
-            "flex flex-row",
-            isMobile ? "space-x-10" : "space-x-20"
-          )}
-        >
+        <motion.div className="flex flex-row mb-10 space-x-20 ">
           {secondRow.map((wallp) => (
             <ProductCard
               product={wallp}
