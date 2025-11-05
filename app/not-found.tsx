@@ -7,7 +7,7 @@ export default function NotFound() {
         dark:bg-black ">
       <h1 className="mb-4 text-9xl font-bold text-gray-900 dark:text-gray-50 tracking-widest">404</h1>
       <p className="mb-8 text-xl text-gray-600 dark:text-gray-300">
-        Oops! Seems like you've ventured off the beaten path.
+      {`Oops! Seems like you've ventured off the beaten path.`}
       </p>
 
       <Link href="/">

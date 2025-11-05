@@ -1,7 +1,7 @@
 
 import TiltedCard from './TiltedCard';
 import { useImagePopupStore } from "@/app/store";
-import { useRef, useEffect, use } from "react";
+import { useRef, useEffect } from "react";
   
 
 export const ImgPopUp = () => {
